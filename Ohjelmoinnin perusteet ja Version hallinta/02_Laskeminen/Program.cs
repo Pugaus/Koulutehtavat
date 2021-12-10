@@ -6,6 +6,15 @@ namespace _02_Laskeminen
     {
         static void Main(string[] args)
         {
+            //Vaihe 1. 
+            //Tee ohjelma, joka laskee ja tulostaa muuttujien avulla alla olevan laskutoimituksen näkymän.
+
+            //Vaihe 2.
+            //Tee ohjelma, joka kysyy käyttäjältä numeron(väliltä 0 - 10), laskee ja tulostaa muuttujien avulla alla käyttäjän antaman numeron kertotaulun edellisten vaiheiden tapaan.
+
+            //Vaihe 3. 
+            //Paranna Console Application ohjelmaasi siten, että ohjelma tulostaa myös annetun luvun jakolaskut ja jakojäännösoperaatiot kertotaulun rinnalle.
+
             int luku = 0;
 
             Console.WriteLine("Anna jokin luku 1 - 10 väliltä:");
