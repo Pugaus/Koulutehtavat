@@ -1,7 +1,7 @@
 ﻿
 namespace Football_IQ
 {
-    partial class Form1
+    partial class Paavalikko
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace Football_IQ
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paavalikko));
             this.buttonVastaus = new System.Windows.Forms.Button();
             this.comboBoxVastaus = new System.Windows.Forms.ComboBox();
             this.buttonKysymys = new System.Windows.Forms.Button();
@@ -46,18 +46,22 @@ namespace Football_IQ
             this.gameManualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxPalkinnot = new System.Windows.Forms.PictureBox();
+            this.labelPiste = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPalkinnot)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonVastaus
             // 
+            this.buttonVastaus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonVastaus.BackColor = System.Drawing.SystemColors.Control;
             this.buttonVastaus.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.buttonVastaus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVastaus.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonVastaus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(93)))), ((int)(((byte)(119)))));
-            this.buttonVastaus.Location = new System.Drawing.Point(522, 470);
+            this.buttonVastaus.Location = new System.Drawing.Point(607, 453);
             this.buttonVastaus.Name = "buttonVastaus";
             this.buttonVastaus.Size = new System.Drawing.Size(75, 32);
             this.buttonVastaus.TabIndex = 0;
@@ -67,7 +71,9 @@ namespace Football_IQ
             // 
             // comboBoxVastaus
             // 
+            this.comboBoxVastaus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxVastaus.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.comboBoxVastaus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVastaus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxVastaus.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxVastaus.FormattingEnabled = true;
@@ -78,9 +84,9 @@ namespace Football_IQ
             "Pass",
             "Kneel down",
             "Dont know / it depends"});
-            this.comboBoxVastaus.Location = new System.Drawing.Point(360, 471);
+            this.comboBoxVastaus.Location = new System.Drawing.Point(408, 454);
             this.comboBoxVastaus.Name = "comboBoxVastaus";
-            this.comboBoxVastaus.Size = new System.Drawing.Size(156, 31);
+            this.comboBoxVastaus.Size = new System.Drawing.Size(193, 31);
             this.comboBoxVastaus.TabIndex = 1;
             this.comboBoxVastaus.SelectedIndexChanged += new System.EventHandler(this.comboBoxVastaus_SelectedIndexChanged);
             // 
@@ -91,11 +97,11 @@ namespace Football_IQ
             this.buttonKysymys.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKysymys.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonKysymys.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonKysymys.Location = new System.Drawing.Point(428, 429);
+            this.buttonKysymys.Location = new System.Drawing.Point(276, 453);
             this.buttonKysymys.Name = "buttonKysymys";
-            this.buttonKysymys.Size = new System.Drawing.Size(95, 32);
+            this.buttonKysymys.Size = new System.Drawing.Size(126, 32);
             this.buttonKysymys.TabIndex = 2;
-            this.buttonKysymys.Text = "Question";
+            this.buttonKysymys.Text = "New question";
             this.buttonKysymys.UseVisualStyleBackColor = false;
             this.buttonKysymys.Click += new System.EventHandler(this.buttonKysymys_Click);
             // 
@@ -103,7 +109,7 @@ namespace Football_IQ
             // 
             this.labelKysymys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelKysymys.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelKysymys.Location = new System.Drawing.Point(12, 401);
+            this.labelKysymys.Location = new System.Drawing.Point(12, 416);
             this.labelKysymys.Name = "labelKysymys";
             this.labelKysymys.Size = new System.Drawing.Size(933, 15);
             this.labelKysymys.TabIndex = 3;
@@ -115,7 +121,7 @@ namespace Football_IQ
             this.labelOikeaVastaus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelOikeaVastaus.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelOikeaVastaus.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelOikeaVastaus.Location = new System.Drawing.Point(12, 557);
+            this.labelOikeaVastaus.Location = new System.Drawing.Point(12, 519);
             this.labelOikeaVastaus.Name = "labelOikeaVastaus";
             this.labelOikeaVastaus.Size = new System.Drawing.Size(933, 29);
             this.labelOikeaVastaus.TabIndex = 4;
@@ -127,7 +133,7 @@ namespace Football_IQ
             this.labelOikeinTaiVaarin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelOikeinTaiVaarin.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelOikeinTaiVaarin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelOikeinTaiVaarin.Location = new System.Drawing.Point(12, 535);
+            this.labelOikeinTaiVaarin.Location = new System.Drawing.Point(12, 497);
             this.labelOikeinTaiVaarin.Name = "labelOikeinTaiVaarin";
             this.labelOikeinTaiVaarin.Size = new System.Drawing.Size(933, 26);
             this.labelOikeinTaiVaarin.TabIndex = 5;
@@ -171,6 +177,7 @@ namespace Football_IQ
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem,
@@ -223,11 +230,38 @@ namespace Football_IQ
             this.openDataToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.openDataToolStripMenuItem.Text = "Open data";
             // 
-            // Form1
+            // pictureBoxPalkinnot
+            // 
+            this.pictureBoxPalkinnot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxPalkinnot.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPalkinnot.Image")));
+            this.pictureBoxPalkinnot.Location = new System.Drawing.Point(897, 14);
+            this.pictureBoxPalkinnot.Name = "pictureBoxPalkinnot";
+            this.pictureBoxPalkinnot.Size = new System.Drawing.Size(45, 65);
+            this.pictureBoxPalkinnot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxPalkinnot.TabIndex = 10;
+            this.pictureBoxPalkinnot.TabStop = false;
+            this.pictureBoxPalkinnot.Click += new System.EventHandler(this.pictureBoxPalkinnot_Click);
+            // 
+            // labelPiste
+            // 
+            this.labelPiste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPiste.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelPiste.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.labelPiste.Location = new System.Drawing.Point(536, 500);
+            this.labelPiste.Name = "labelPiste";
+            this.labelPiste.Size = new System.Drawing.Size(430, 20);
+            this.labelPiste.TabIndex = 11;
+            this.labelPiste.Text = "+1";
+            this.labelPiste.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelPiste.Visible = false;
+            // 
+            // Paavalikko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 626);
+            this.Controls.Add(this.labelPiste);
+            this.Controls.Add(this.pictureBoxPalkinnot);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelOikeinTaiVaarin);
             this.Controls.Add(this.labelOikeaVastaus);
@@ -239,13 +273,14 @@ namespace Football_IQ
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Paavalikko";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Football IQ";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPalkinnot)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,6 +304,8 @@ namespace Football_IQ
         private System.Windows.Forms.ToolStripMenuItem gameManualToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openDataToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBoxPalkinnot;
+        private System.Windows.Forms.Label labelPiste;
     }
 }
 

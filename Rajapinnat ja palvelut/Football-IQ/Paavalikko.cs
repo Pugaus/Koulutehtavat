@@ -11,8 +11,8 @@ using System.Data.SqlClient;
 
 namespace Football_IQ
 {
-    public partial class Form1 : Form
-    {
+    public partial class Paavalikko : Form
+    {  
         string vastaus;
         string yhteysMerkkiJono = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Football;" +
             "Integrated Security=True;" +
@@ -22,7 +22,7 @@ namespace Football_IQ
             "ApplicationIntent=ReadWrite;" +
             "MultiSubnetFailover=False";
 
-        public Form1()
+        public Paavalikko()
         {
             InitializeComponent();
         }
@@ -32,23 +32,25 @@ namespace Football_IQ
             labelKysymys.Hide();
             labelOikeaVastaus.Hide();
             labelOikeinTaiVaarin.Hide();
-            comboBoxVastaus.Hide();
-            buttonVastaus.Hide();
+            comboBoxVastaus.Enabled = false;
+            buttonVastaus.Enabled = false;
+            
             
         }
 
         private void buttonKysymys_Click(object sender, EventArgs e)
         {
 
-            comboBoxVastaus.ResetText();
+            labelPiste.Hide();
             labelKysymys.Show();
-            labelOikeinTaiVaarin.Hide();
-            labelOikeaVastaus.Hide();
             comboBoxVastaus.Show();
+            labelOikeinTaiVaarin.Hide();
+            labelOikeaVastaus.Hide();            
             buttonVastaus.Show();
             buttonKysymys.Hide();
             buttonVastaus.Enabled = true;
             comboBoxVastaus.Enabled = true;
+            comboBoxVastaus.SelectedItem = null;
 
 
             string kysymysSql = "SELECT TOP 1 Skenaario FROM Kysymykset ORDER BY NEWID()";
@@ -92,10 +94,29 @@ namespace Football_IQ
             }            
 
             if (vastaus == labelOikeaVastaus.Text)
-            {                
+            {
+                string pisteSql = "UPDATE Palkinnot SET Pisteet = Pisteet + 1";
+                using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+                {
+                    yhteys.Open();
+                    using (SqlCommand command = new SqlCommand(pisteSql, yhteys))
+
+                        try
+                        {
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                        }
+                }
+
+                labelPiste.Show();
                 labelOikeinTaiVaarin.Show();
                 labelOikeinTaiVaarin.ForeColor = Color.MediumSeaGreen;
                 labelOikeinTaiVaarin.Text = "Right answer";
+
+                
             }
             else
             {
@@ -105,12 +126,21 @@ namespace Football_IQ
                 labelOikeinTaiVaarin.ForeColor = Color.FromArgb(244, 93, 119);
                 labelOikeinTaiVaarin.Text = "Wrong answer";
             }
+                        
         }
-
+       
 
         private void comboBoxVastaus_SelectedIndexChanged(object sender, EventArgs e)
         {
             vastaus = this.comboBoxVastaus.GetItemText(this.comboBoxVastaus.SelectedItem);
+        }
+
+        private void pictureBoxPalkinnot_Click(object sender, EventArgs e)
+        {
+            Palkinnot palkinnot = new Palkinnot();
+            palkinnot.ShowDialog();
+
+            this.Show();
         }
     }
 }

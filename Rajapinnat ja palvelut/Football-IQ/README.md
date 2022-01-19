@@ -1,2 +1,3 @@
-Sovellus
+# Sovellus 
+
 Keksi sovellus, joka hyödyntää verkossa saatavilla olevaa avointa (ja ilmaista) dataa. Voit lähteä liikkeelle esimerkiksi tutkimalla millaista mielestäsi kiinnostavaa kiinnostavaa tietoa API sivuistoilta löytyy ja miten sitä voisi hyödyntää sovelluksessa. Esimerkkejä syntyneistä verkkopalveluista, visualisoinneista ja mobiilipalveluista löytyy esimerkiksi on HRI:n tarjoamaan dataan liittyen heidän sovellusgalleriasta. Muista kotimaisista ja kansainvälisistä katalogeista voi kaivaa lisää ideoita sovelluksen kehittämiseen. Kiinnitä huomiota missä muodossa data on (esimerkiksi json, xml) ja kuinka pystyt tuomaan sen hyödynnettäväksi omaan sovellukseen. Luo sovellus ohjelmoimalla ja käyttämällä tähän kaikkea tähän mennessä oppimaasi hyväksi. Herätä data eloon. Avoimen datan työkaluja on tarjolla jo moneen tarpeeseen.
