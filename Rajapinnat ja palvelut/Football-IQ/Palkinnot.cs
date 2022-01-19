@@ -31,23 +31,33 @@ namespace Football_IQ
         private void Palkinnot_Load(object sender, EventArgs e)
         {
             string pisteetSql = "SELECT Pisteet FROM Palkinnot WHERE Id = 1";
-
             using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
             {
-                yhteys.Open();
-                using (SqlCommand command = new SqlCommand(pisteetSql, yhteys))
+                try
                 {
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
+                    // Avataan yhteys komennon suorittamista varten
+                    yhteys.Open();
+                    using (SqlCommand hakukomento = new SqlCommand(pisteetSql, yhteys))
                     {
-                        pisteet = reader.GetInt32(0);
-                        break;
+                        SqlDataReader lukija = hakukomento.ExecuteReader();
+                        // Käydään läpi lukijan lukemat tietueet
+                        while (lukija.Read())
+                        {
+                            // lisätään saadut pisteet
+                            pisteet = lukija.GetInt32(0);
+                            break;
+                        }
                     }
+                    yhteys.Close();
                 }
-                yhteys.Close();
-
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    throw;
+                }                
             }
 
+            // Palkintojen rajat joilloin ne tulevat näkyviin
             if (pisteet >= 1)
             {
                 labelFirstDown.ForeColor = Color.FromArgb(244, 93, 119);
@@ -58,6 +68,12 @@ namespace Football_IQ
             if (pisteet >= 100)
             {
                 labelSitu.ForeColor = Color.FromArgb(244, 93, 119);
+                pictureBox2.Visible = true;
+                labelPiilotus2.Visible = false;
+            }
+            if (pisteet >= 500)
+            {
+                labelBragging.ForeColor = Color.FromArgb(244, 93, 119);
                 pictureBox3.Visible = true;
                 labelPiilotus3.Visible = false;
             }
@@ -68,8 +84,13 @@ namespace Football_IQ
                 labelPiilotus4.Visible = false;
             }
 
+            // Näytetään kokonais pisteet 
             labelKokonais.Text = "Total points: " + pisteet;
+        }
 
+        private void buttonKysymys_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
