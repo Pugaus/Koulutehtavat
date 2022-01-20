@@ -1,3 +1,16 @@
+--Palkinnot taulun luonti
+
+CREATE TABLE [Palkinnot] (
+Id int IDENTITY NOT NULL,
+Pisteet int NOT NULL);
+
+--Kysymykset taulun luonti
+
+CREATE TABLE [Kysymykset] (
+Id int IDENTITY NOT NULL,
+Skenaario varchar(500) NOT NULL,
+Vastaus varchar (100) NOT NULL);
+
 SET IDENTITY_INSERT [dbo].[Kysymykset] ON
 INSERT INTO [dbo].[Kysymykset] ([Id], [Skenaario], [Vastaus]) VALUES (1, N'It is first down and 10. The ball is on your opponents 20 yardline. There is 3 seconds left in the second quarter. You are down by 3 points. Would you:', N'Kick a field goal')
 INSERT INTO [dbo].[Kysymykset] ([Id], [Skenaario], [Vastaus]) VALUES (2, N'It is second down and inches. The ball is on your opponents 5 yardline. There is 3 seconds left in the second quarter. You are down by 3 points. Would you:', N'Kick a field goal')
