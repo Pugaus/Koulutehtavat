@@ -84,7 +84,7 @@ namespace Football_IQ
                 labelPiilotus4.Visible = false;
             }
 
-            // Näytetään kokonais pisteet 
+            // Näytetään kokonaispisteet 
             labelKokonais.Text = "Total points: " + pisteet;
         }
 

@@ -154,5 +154,25 @@ namespace Football_IQ
 
             this.Show();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Ohjelman sulkeminen.
+            DialogResult dialogResult = MessageBox.Show("Haluatko varmasti sulkea ohjelman?", "Sulje", MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                return;
+            }
+        }
+
+        private void openDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ohjelman data on kerätty Data World sivustolta. " +
+                "Osoite: https://data.world/crowdflower/football-strategy", "Avoin data", MessageBoxButtons.OK);
+        }
     }
 }
