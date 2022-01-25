@@ -15,13 +15,11 @@ namespace Football_IQ
         public string Kysymys(string kysymys)
         {            
             return dbModel.valitseYksiKysymys(kysymys);
-
         }
 
         public string Vastaus(string vastaus)
         {
             return dbModel.haeKysymyksenVastaus(vastaus);
-
         }
         public void Pistepaivitys()
         {
@@ -31,6 +29,21 @@ namespace Football_IQ
         {
             return dbModel.pisteidenHakuDatabase(pisteet);
         }
-
+        public int JuoksuHaku(int juoksuPisteet)
+        {
+            return dbModel.juoksupisteidenHakuDatabase(juoksuPisteet);
+        }
+        public void JuoksuPäivitys()
+        {
+            dbModel.juoksupistePaivitys();
+        }
+        public int HeittoHaku(int heittopisteet)
+        {
+            return dbModel.heittopisteidenHakuDatabase(heittopisteet);
+        }
+        public void HeittoPäivitys()
+        {
+            dbModel.heittopistePaivitys();
+        }
     }
 }

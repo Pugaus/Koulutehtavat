@@ -15,8 +15,7 @@ namespace Football_IQ
     {
         Pelinlogiikka registerHandler;
         string kysymys = " ";
-        string VastausHaku;
-        string vastaus;
+        string VastausHaku, vastaus;
 
         public Paavalikko()
         {
@@ -53,7 +52,7 @@ namespace Football_IQ
             // Tyhjennetään vastausvaihtoehto comboboxista
             comboBoxVastaus.SelectedItem = null;
 
-
+            // Haetaan satunnainen kysymys ja käytetään sitä vastauksen haussa
             labelKysymys.Text = registerHandler.Kysymys(kysymys);
             VastausHaku = labelKysymys.Text;
             
@@ -67,6 +66,7 @@ namespace Football_IQ
             buttonVastaus.Enabled = false;
             comboBoxVastaus.Enabled = false;
 
+            // Kysymyksen oikea vastaus
             labelOikeaVastaus.Text = registerHandler.Vastaus(VastausHaku);
             
             // Jos vastaus oli oiekin, lisätään piste tietokantaa
@@ -80,6 +80,15 @@ namespace Football_IQ
                 labelOikeinTaiVaarin.Show();
                 labelOikeinTaiVaarin.ForeColor = Color.MediumSeaGreen;
                 labelOikeinTaiVaarin.Text = "Right answer";
+
+                if (labelOikeaVastaus.Text == "Run")
+                {
+                    registerHandler.JuoksuPäivitys();
+                }
+                if (labelOikeaVastaus.Text == "Pass")
+                {
+                    registerHandler.HeittoPäivitys();
+                }
 
             }
             else
@@ -109,7 +118,7 @@ namespace Football_IQ
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Ohjelman sulkeminen.
-            DialogResult dialogResult = MessageBox.Show("Haluatko varmasti sulkea ohjelman?", "Sulje", MessageBoxButtons.OKCancel);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to close the program?", "Close", MessageBoxButtons.OKCancel);
             if (dialogResult == DialogResult.OK)
             {
                 Application.Exit();

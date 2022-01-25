@@ -25,24 +25,24 @@ namespace Football_IQ
         {
             using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
             {
-                    string kysymysSql = "SELECT TOP 1 Skenaario FROM Kysymykset ORDER BY NEWID()";
+                string kysymysSql = "SELECT TOP 1 Skenaario FROM Kysymykset ORDER BY NEWID()";
+                {
+                    // Avataan yhteys komennon suorittamista varten
+                    yhteys.Open();
+                    using (SqlCommand hakukomento = new SqlCommand(kysymysSql, yhteys))
                     {
-                        // Avataan yhteys komennon suorittamista varten
-                        yhteys.Open();
-                        using (SqlCommand command = new SqlCommand(kysymysSql, yhteys))
+                        // Käydään läpi lukijan lukemat tietueet
+                        SqlDataReader lukija = hakukomento.ExecuteReader();
+                        while (lukija.Read())
                         {
-                            // Käydään läpi lukijan lukemat tietueet
-                            SqlDataReader reader = command.ExecuteReader();
-                            while (reader.Read())
-                            {
-                                // Saadaan yksi satunnainen kysymys
-                                kysymys = reader[0] as string;
-                            }
+                            // Saadaan yksi satunnainen kysymys
+                            kysymys = lukija[0] as string;
                         }
-                        yhteys.Close();
-                    }               
+                    }
+                    yhteys.Close();
+                }
             }
-            return kysymys;                      
+            return kysymys;
         }
 
         public string haeKysymyksenVastaus(string vastaus)
@@ -52,16 +52,16 @@ namespace Football_IQ
             {
                 // Avataan yhteys komennon suorittamista varten
                 yhteys.Open();
-                using (SqlCommand command = new SqlCommand(vastausSql, yhteys))
+                using (SqlCommand hakukomento = new SqlCommand(vastausSql, yhteys))
                 {
                     try
                     {
                         // Käydään läpi lukijan lukemat tietueet
-                        SqlDataReader reader = command.ExecuteReader();
-                        while (reader.Read())
+                        SqlDataReader lukija = hakukomento.ExecuteReader();
+                        while (lukija.Read())
                         {
                             // Saadaan kysymyksen oikea vastaus
-                            vastaus = reader["Vastaus"].ToString();
+                            vastaus = lukija["Vastaus"].ToString();
                             break;
                         }
                         yhteys.Close();
@@ -69,6 +69,7 @@ namespace Football_IQ
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.ToString());
+                        throw;
                     }
                 }
             }
@@ -79,23 +80,26 @@ namespace Football_IQ
             string pisteSql = "UPDATE Palkinnot SET Pisteet = Pisteet + 1";
             using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
             {
+                // Avataan yhteys komennon suorittamista varten
                 yhteys.Open();
-                using (SqlCommand command = new SqlCommand(pisteSql, yhteys))
+                using (SqlCommand hakukomento = new SqlCommand(pisteSql, yhteys))
 
                     try
                     {
-                        command.ExecuteNonQuery();
+                        // Tietokanta päivittyy
+                        hakukomento.ExecuteNonQuery();
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.ToString());
+                        throw;
                     }
             }
         }
 
         public int pisteidenHakuDatabase(int pisteet)
         {
-            string pisteetSql = "SELECT Pisteet FROM Palkinnot WHERE Id = 1";
+            string pisteetSql = "SELECT Pisteet FROM Palkinnot";
             using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
             {
                 try
@@ -122,6 +126,107 @@ namespace Football_IQ
                 }
             }
             return pisteet;
+        }
+        public int juoksupisteidenHakuDatabase(int juoksuPisteet)
+        {
+            string pisteetSql = "SELECT Run FROM Palkinnot";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                try
+                {
+                    // Avataan yhteys komennon suorittamista varten
+                    yhteys.Open();
+                    using (SqlCommand hakukomento = new SqlCommand(pisteetSql, yhteys))
+                    {
+                        SqlDataReader lukija = hakukomento.ExecuteReader();
+                        // Käydään läpi lukijan lukemat tietueet
+                        while (lukija.Read())
+                        {
+                            // lisätään saadut pisteet
+                            juoksuPisteet = lukija.GetInt32(0);
+                            break;
+                        }
+                    }
+                    yhteys.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    throw;
+                }
+            }
+            return juoksuPisteet;
+        }
+        public void juoksupistePaivitys()
+        {
+            string pisteSql = "UPDATE Palkinnot SET Run = Run + 1";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                // Avataan yhteys komennon suorittamista varten
+                yhteys.Open();
+                using (SqlCommand hakukomento = new SqlCommand(pisteSql, yhteys))
+
+                    try
+                    {
+                        // Tietokanta päivittyy
+                        hakukomento.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+            }
+        }
+        public int heittopisteidenHakuDatabase(int heittoPisteet)
+        {
+            string pisteetSql = "SELECT Pass FROM Palkinnot";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                try
+                {
+                    // Avataan yhteys komennon suorittamista varten
+                    yhteys.Open();
+                    using (SqlCommand hakukomento = new SqlCommand(pisteetSql, yhteys))
+                    {
+                        SqlDataReader lukija = hakukomento.ExecuteReader();
+                        // Käydään läpi lukijan lukemat tietueet
+                        while (lukija.Read())
+                        {
+                            // lisätään saadut pisteet
+                            heittoPisteet = lukija.GetInt32(0);
+                            break;
+                        }
+                    }
+                    yhteys.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    throw;
+                }
+            }
+            return heittoPisteet;
+        }
+        public void heittopistePaivitys()
+        {
+            string pisteSql = "UPDATE Palkinnot SET Pass = Pass + 1";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                // Avataan yhteys komennon suorittamista varten
+                yhteys.Open();
+                using (SqlCommand hakukomento = new SqlCommand(pisteSql, yhteys))
+
+                    try
+                    {
+                        // Tietokanta päivittyy
+                        hakukomento.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                        throw;
+                    }
+            }
         }
     }
 }
