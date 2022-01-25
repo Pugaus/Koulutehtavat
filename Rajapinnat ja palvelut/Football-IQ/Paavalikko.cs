@@ -13,20 +13,16 @@ namespace Football_IQ
 {
     public partial class Paavalikko : Form
     {
-        Kaupanlogiikka registerHandler;
-        private string kysymys;
-        private string oikeaVastaus;
-
-
+        Pelinlogiikka registerHandler;
+        string kysymys = " ";
+        string VastausHaku;
         string vastaus;
-
 
         public Paavalikko()
         {
-            registerHandler = new Kaupanlogiikka();
+            registerHandler = new Pelinlogiikka();
             InitializeComponent();
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -59,40 +55,25 @@ namespace Football_IQ
 
 
             labelKysymys.Text = registerHandler.Kysymys(kysymys);
-            oikeaVastaus = labelKysymys.Text;
+            VastausHaku = labelKysymys.Text;
             
             
 
         }
         private void buttonVastaus_Click(object sender, EventArgs e)
         {
-
             // Lukitaan muut toiminnot paitsi uusi kysymys nappi
             buttonKysymys.Show();
             buttonVastaus.Enabled = false;
             comboBoxVastaus.Enabled = false;
 
-            labelOikeaVastaus.Text = registerHandler.Vastaus(oikeaVastaus);
+            labelOikeaVastaus.Text = registerHandler.Vastaus(VastausHaku);
             
-
             // Jos vastaus oli oiekin, lisätään piste tietokantaa
             if (vastaus == labelOikeaVastaus.Text)
             {
-                //string pisteSql = "UPDATE Palkinnot SET Pisteet = Pisteet + 1";
-                //using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
-                //{
-                //    yhteys.Open();
-                //    using (SqlCommand command = new SqlCommand(pisteSql, yhteys))
-
-                //        try
-                //        {
-                //            command.ExecuteNonQuery();
-                //        }
-                //        catch (Exception ex)
-                //        {
-                //            Console.WriteLine(ex.ToString());
-                //        }
-                //}
+                
+                registerHandler.Pistepaivitys();
 
                 // Näytetään, että vastaus oli oikein
                 labelPiste.Show();
@@ -110,7 +91,6 @@ namespace Football_IQ
                 labelOikeinTaiVaarin.ForeColor = Color.FromArgb(244, 93, 119);
                 labelOikeinTaiVaarin.Text = "Wrong answer";
             }
-
         }
        
         private void comboBoxVastaus_SelectedIndexChanged(object sender, EventArgs e)

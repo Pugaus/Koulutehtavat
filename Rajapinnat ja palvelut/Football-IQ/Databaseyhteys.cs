@@ -7,10 +7,10 @@ using System.Data.SqlClient;
 
 namespace Football_IQ
 {
-    class Databasehallinta
+    class Databaseyhteys
     {
         string yhteysMerkkiJono;
-        public Databasehallinta()
+        public Databaseyhteys()
         {
             yhteysMerkkiJono = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Football;" +
             "Integrated Security=True;" +
@@ -21,7 +21,6 @@ namespace Football_IQ
             "MultiSubnetFailover=False";
 
         }
-
         public string valitseYksiKysymys(string kysymys)
         {
             using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
@@ -46,9 +45,8 @@ namespace Football_IQ
             return kysymys;                      
         }
 
-        public string haeKysymyksetVastaus(string vastaus)
+        public string haeKysymyksenVastaus(string vastaus)
         {
-
             string vastausSql = "SELECT Vastaus FROM Kysymykset WHERE Skenaario = " + "'" + vastaus + "'";
             using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
             {
@@ -72,11 +70,58 @@ namespace Football_IQ
                     {
                         Console.WriteLine(ex.ToString());
                     }
-
                 }
-
             }
             return vastaus;
+        }
+        public void palkintopistePaivitys()
+        {
+            string pisteSql = "UPDATE Palkinnot SET Pisteet = Pisteet + 1";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                yhteys.Open();
+                using (SqlCommand command = new SqlCommand(pisteSql, yhteys))
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+            }
+        }
+
+        public int pisteidenHakuDatabase(int pisteet)
+        {
+            string pisteetSql = "SELECT Pisteet FROM Palkinnot WHERE Id = 1";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                try
+                {
+                    // Avataan yhteys komennon suorittamista varten
+                    yhteys.Open();
+                    using (SqlCommand hakukomento = new SqlCommand(pisteetSql, yhteys))
+                    {
+                        SqlDataReader lukija = hakukomento.ExecuteReader();
+                        // Käydään läpi lukijan lukemat tietueet
+                        while (lukija.Read())
+                        {
+                            // lisätään saadut pisteet
+                            pisteet = lukija.GetInt32(0);
+                            break;
+                        }
+                    }
+                    yhteys.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    throw;
+                }
+            }
+            return pisteet;
         }
     }
 }

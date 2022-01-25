@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace Football_IQ
 {
-    public class Kaupanlogiikka
+    public class Pelinlogiikka
     {
-        Databasehallinta dbModel = new Databasehallinta();
+        Databaseyhteys dbModel = new Databaseyhteys();
 
         public string Kysymys(string kysymys)
         {            
@@ -22,6 +22,14 @@ namespace Football_IQ
         {
             return dbModel.haeKysymyksenVastaus(vastaus);
 
+        }
+        public void Pistepaivitys()
+        {
+            dbModel.palkintopistePaivitys();
+        }
+        public int PisteHaku(int pisteet)
+        {
+            return dbModel.pisteidenHakuDatabase(pisteet);
         }
 
     }
