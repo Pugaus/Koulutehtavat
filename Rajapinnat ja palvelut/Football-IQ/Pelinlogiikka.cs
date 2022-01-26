@@ -45,5 +45,21 @@ namespace Football_IQ
         {
             dbModel.heittopistePaivitys();
         }
+        public int PotkuHaku(int potkuPiste)
+        {
+            return dbModel.potkupisteidenHakuDatabase(potkuPiste);
+        }
+        public void PotkuPaivitys()
+        {
+            dbModel.potkupistePaivitys();
+        }
+        public int PolviHaku(int polviPiste)
+        {
+            return dbModel.polvipisteidenHakuDatabase(polviPiste);
+        }
+        public void PolviPaivitys()
+        {
+            dbModel.polvipistePaivitys();
+        }
     }
 }

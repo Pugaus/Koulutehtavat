@@ -228,5 +228,107 @@ namespace Football_IQ
                     }
             }
         }
+        public int potkupisteidenHakuDatabase(int potkuPisteet)
+        {
+            string pisteetSql = "SELECT Fieldgoal FROM Palkinnot";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                try
+                {
+                    // Avataan yhteys komennon suorittamista varten
+                    yhteys.Open();
+                    using (SqlCommand hakukomento = new SqlCommand(pisteetSql, yhteys))
+                    {
+                        SqlDataReader lukija = hakukomento.ExecuteReader();
+                        // Käydään läpi lukijan lukemat tietueet
+                        while (lukija.Read())
+                        {
+                            // lisätään saadut pisteet
+                            potkuPisteet = lukija.GetInt32(0);
+                            break;
+                        }
+                    }
+                    yhteys.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    throw;
+                }
+            }
+            return potkuPisteet;
+        }
+        public void potkupistePaivitys()
+        {
+            string pisteSql = "UPDATE Palkinnot SET Fieldgoal = Fieldgoal + 1";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                // Avataan yhteys komennon suorittamista varten
+                yhteys.Open();
+                using (SqlCommand hakukomento = new SqlCommand(pisteSql, yhteys))
+
+                    try
+                    {
+                        // Tietokanta päivittyy
+                        hakukomento.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                        throw;
+                    }
+            }
+        }
+        public int polvipisteidenHakuDatabase(int polviPisteet)
+        {
+            string pisteetSql = "SELECT Kneel FROM Palkinnot";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                try
+                {
+                    // Avataan yhteys komennon suorittamista varten
+                    yhteys.Open();
+                    using (SqlCommand hakukomento = new SqlCommand(pisteetSql, yhteys))
+                    {
+                        SqlDataReader lukija = hakukomento.ExecuteReader();
+                        // Käydään läpi lukijan lukemat tietueet
+                        while (lukija.Read())
+                        {
+                            // lisätään saadut pisteet
+                            polviPisteet = lukija.GetInt32(0);
+                            break;
+                        }
+                    }
+                    yhteys.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    throw;
+                }
+            }
+            return polviPisteet;
+        }
+        public void polvipistePaivitys()
+        {
+            string pisteSql = "UPDATE Palkinnot SET Kneel = Kneel + 1";
+            using (SqlConnection yhteys = new SqlConnection(yhteysMerkkiJono))
+            {
+                // Avataan yhteys komennon suorittamista varten
+                yhteys.Open();
+                using (SqlCommand hakukomento = new SqlCommand(pisteSql, yhteys))
+
+                    try
+                    {
+                        // Tietokanta päivittyy
+                        hakukomento.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                        throw;
+                    }
+            }
+        }
     }
 }

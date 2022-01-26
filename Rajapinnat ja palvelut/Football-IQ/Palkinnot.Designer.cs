@@ -54,20 +54,25 @@ namespace Football_IQ
             this.labelDots = new System.Windows.Forms.Label();
             this.labelDotsSelitys = new System.Windows.Forms.Label();
             this.labelPiilotus8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelPiilotus7 = new System.Windows.Forms.Label();
             this.labelPiilotus5 = new System.Windows.Forms.Label();
-            this.pictureBox55 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.labelPiilotus6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.labelJuoksu = new System.Windows.Forms.Label();
             this.labelHeitto = new System.Windows.Forms.Label();
+            this.labelGoal = new System.Windows.Forms.Label();
+            this.labelGoalSelitys = new System.Windows.Forms.Label();
+            this.labelPotku = new System.Windows.Forms.Label();
+            this.labelVictory = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -78,7 +83,7 @@ namespace Football_IQ
             this.labelKokonais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelKokonais.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelKokonais.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.labelKokonais.Location = new System.Drawing.Point(69, 97);
+            this.labelKokonais.Location = new System.Drawing.Point(72, 114);
             this.labelKokonais.Name = "labelKokonais";
             this.labelKokonais.Size = new System.Drawing.Size(933, 29);
             this.labelKokonais.TabIndex = 0;
@@ -88,7 +93,7 @@ namespace Football_IQ
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Montserrat Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Montserrat Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(93)))), ((int)(((byte)(119)))));
             this.label2.Location = new System.Drawing.Point(12, 43);
             this.label2.Name = "label2";
@@ -102,7 +107,7 @@ namespace Football_IQ
             this.labelFirstDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFirstDown.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelFirstDown.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelFirstDown.Location = new System.Drawing.Point(69, 205);
+            this.labelFirstDown.Location = new System.Drawing.Point(72, 199);
             this.labelFirstDown.Name = "labelFirstDown";
             this.labelFirstDown.Size = new System.Drawing.Size(886, 28);
             this.labelFirstDown.TabIndex = 9;
@@ -113,7 +118,7 @@ namespace Football_IQ
             // 
             this.labelFirsDownSelitys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFirsDownSelitys.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelFirsDownSelitys.Location = new System.Drawing.Point(69, 228);
+            this.labelFirsDownSelitys.Location = new System.Drawing.Point(72, 222);
             this.labelFirsDownSelitys.Name = "labelFirsDownSelitys";
             this.labelFirsDownSelitys.Size = new System.Drawing.Size(886, 20);
             this.labelFirsDownSelitys.TabIndex = 10;
@@ -123,7 +128,7 @@ namespace Football_IQ
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(279, 212);
+            this.pictureBox1.Location = new System.Drawing.Point(282, 206);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(95, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -136,7 +141,7 @@ namespace Football_IQ
             this.labelPiilotus1.AutoSize = true;
             this.labelPiilotus1.Font = new System.Drawing.Font("Montserrat Black", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPiilotus1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelPiilotus1.Location = new System.Drawing.Point(288, 175);
+            this.labelPiilotus1.Location = new System.Drawing.Point(291, 169);
             this.labelPiilotus1.Name = "labelPiilotus1";
             this.labelPiilotus1.Size = new System.Drawing.Size(80, 92);
             this.labelPiilotus1.TabIndex = 12;
@@ -147,7 +152,7 @@ namespace Football_IQ
             this.labelIq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelIq.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelIq.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelIq.Location = new System.Drawing.Point(69, 436);
+            this.labelIq.Location = new System.Drawing.Point(72, 430);
             this.labelIq.Name = "labelIq";
             this.labelIq.Size = new System.Drawing.Size(886, 28);
             this.labelIq.TabIndex = 13;
@@ -158,7 +163,7 @@ namespace Football_IQ
             // 
             this.labelIqSelitys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelIqSelitys.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelIqSelitys.Location = new System.Drawing.Point(69, 458);
+            this.labelIqSelitys.Location = new System.Drawing.Point(72, 452);
             this.labelIqSelitys.Name = "labelIqSelitys";
             this.labelIqSelitys.Size = new System.Drawing.Size(886, 25);
             this.labelIqSelitys.TabIndex = 14;
@@ -168,7 +173,7 @@ namespace Football_IQ
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(279, 437);
+            this.pictureBox4.Location = new System.Drawing.Point(282, 431);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(95, 41);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -181,7 +186,7 @@ namespace Football_IQ
             this.labelPiilotus4.AutoSize = true;
             this.labelPiilotus4.Font = new System.Drawing.Font("Montserrat Black", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPiilotus4.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelPiilotus4.Location = new System.Drawing.Point(288, 404);
+            this.labelPiilotus4.Location = new System.Drawing.Point(291, 398);
             this.labelPiilotus4.Name = "labelPiilotus4";
             this.labelPiilotus4.Size = new System.Drawing.Size(80, 92);
             this.labelPiilotus4.TabIndex = 16;
@@ -192,7 +197,7 @@ namespace Football_IQ
             this.labelSitu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSitu.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelSitu.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelSitu.Location = new System.Drawing.Point(69, 284);
+            this.labelSitu.Location = new System.Drawing.Point(72, 278);
             this.labelSitu.Name = "labelSitu";
             this.labelSitu.Size = new System.Drawing.Size(886, 28);
             this.labelSitu.TabIndex = 17;
@@ -203,7 +208,7 @@ namespace Football_IQ
             // 
             this.labelSituSelitys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSituSelitys.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelSituSelitys.Location = new System.Drawing.Point(69, 306);
+            this.labelSituSelitys.Location = new System.Drawing.Point(72, 300);
             this.labelSituSelitys.Name = "labelSituSelitys";
             this.labelSituSelitys.Size = new System.Drawing.Size(886, 25);
             this.labelSituSelitys.TabIndex = 18;
@@ -213,7 +218,7 @@ namespace Football_IQ
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(279, 287);
+            this.pictureBox2.Location = new System.Drawing.Point(282, 281);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(95, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -226,7 +231,7 @@ namespace Football_IQ
             this.labelPiilotus2.AutoSize = true;
             this.labelPiilotus2.Font = new System.Drawing.Font("Montserrat Black", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPiilotus2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelPiilotus2.Location = new System.Drawing.Point(288, 251);
+            this.labelPiilotus2.Location = new System.Drawing.Point(291, 245);
             this.labelPiilotus2.Name = "labelPiilotus2";
             this.labelPiilotus2.Size = new System.Drawing.Size(80, 92);
             this.labelPiilotus2.TabIndex = 20;
@@ -236,7 +241,7 @@ namespace Football_IQ
             // 
             this.labelBraggingSelitys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBraggingSelitys.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelBraggingSelitys.Location = new System.Drawing.Point(69, 375);
+            this.labelBraggingSelitys.Location = new System.Drawing.Point(72, 369);
             this.labelBraggingSelitys.Name = "labelBraggingSelitys";
             this.labelBraggingSelitys.Size = new System.Drawing.Size(886, 25);
             this.labelBraggingSelitys.TabIndex = 22;
@@ -248,7 +253,7 @@ namespace Football_IQ
             this.labelBragging.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBragging.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelBragging.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelBragging.Location = new System.Drawing.Point(69, 354);
+            this.labelBragging.Location = new System.Drawing.Point(72, 348);
             this.labelBragging.Name = "labelBragging";
             this.labelBragging.Size = new System.Drawing.Size(886, 28);
             this.labelBragging.TabIndex = 21;
@@ -273,7 +278,7 @@ namespace Football_IQ
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(279, 357);
+            this.pictureBox3.Location = new System.Drawing.Point(282, 351);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(95, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -286,7 +291,7 @@ namespace Football_IQ
             this.labelPiilotus3.AutoSize = true;
             this.labelPiilotus3.Font = new System.Drawing.Font("Montserrat Black", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPiilotus3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelPiilotus3.Location = new System.Drawing.Point(288, 327);
+            this.labelPiilotus3.Location = new System.Drawing.Point(291, 321);
             this.labelPiilotus3.Name = "labelPiilotus3";
             this.labelPiilotus3.Size = new System.Drawing.Size(80, 92);
             this.labelPiilotus3.TabIndex = 25;
@@ -297,7 +302,7 @@ namespace Football_IQ
             this.labelGround.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelGround.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelGround.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelGround.Location = new System.Drawing.Point(524, 286);
+            this.labelGround.Location = new System.Drawing.Point(527, 280);
             this.labelGround.Name = "labelGround";
             this.labelGround.Size = new System.Drawing.Size(421, 28);
             this.labelGround.TabIndex = 26;
@@ -308,7 +313,7 @@ namespace Football_IQ
             // 
             this.labelRunSelitys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelRunSelitys.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelRunSelitys.Location = new System.Drawing.Point(524, 309);
+            this.labelRunSelitys.Location = new System.Drawing.Point(527, 303);
             this.labelRunSelitys.Name = "labelRunSelitys";
             this.labelRunSelitys.Size = new System.Drawing.Size(421, 20);
             this.labelRunSelitys.TabIndex = 27;
@@ -320,7 +325,7 @@ namespace Football_IQ
             this.labelDots.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDots.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelDots.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelDots.Location = new System.Drawing.Point(524, 438);
+            this.labelDots.Location = new System.Drawing.Point(527, 432);
             this.labelDots.Name = "labelDots";
             this.labelDots.Size = new System.Drawing.Size(421, 28);
             this.labelDots.TabIndex = 28;
@@ -331,7 +336,7 @@ namespace Football_IQ
             // 
             this.labelDotsSelitys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDotsSelitys.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelDotsSelitys.Location = new System.Drawing.Point(524, 461);
+            this.labelDotsSelitys.Location = new System.Drawing.Point(527, 455);
             this.labelDotsSelitys.Name = "labelDotsSelitys";
             this.labelDotsSelitys.Size = new System.Drawing.Size(421, 20);
             this.labelDotsSelitys.TabIndex = 29;
@@ -343,51 +348,51 @@ namespace Football_IQ
             this.labelPiilotus8.AutoSize = true;
             this.labelPiilotus8.Font = new System.Drawing.Font("Montserrat Black", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPiilotus8.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelPiilotus8.Location = new System.Drawing.Point(777, 406);
+            this.labelPiilotus8.Location = new System.Drawing.Point(780, 400);
             this.labelPiilotus8.Name = "labelPiilotus8";
             this.labelPiilotus8.Size = new System.Drawing.Size(80, 92);
             this.labelPiilotus8.TabIndex = 33;
             this.labelPiilotus8.Text = "?";
             // 
-            // label7
+            // labelPiilotus7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Montserrat Black", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label7.Location = new System.Drawing.Point(777, 329);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 92);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "?";
+            this.labelPiilotus7.AutoSize = true;
+            this.labelPiilotus7.Font = new System.Drawing.Font("Montserrat Black", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelPiilotus7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.labelPiilotus7.Location = new System.Drawing.Point(780, 327);
+            this.labelPiilotus7.Name = "labelPiilotus7";
+            this.labelPiilotus7.Size = new System.Drawing.Size(80, 92);
+            this.labelPiilotus7.TabIndex = 37;
+            this.labelPiilotus7.Text = "?";
             // 
             // labelPiilotus5
             // 
             this.labelPiilotus5.AutoSize = true;
             this.labelPiilotus5.Font = new System.Drawing.Font("Montserrat Black", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPiilotus5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelPiilotus5.Location = new System.Drawing.Point(777, 177);
+            this.labelPiilotus5.Location = new System.Drawing.Point(780, 171);
             this.labelPiilotus5.Name = "labelPiilotus5";
             this.labelPiilotus5.Size = new System.Drawing.Size(80, 92);
             this.labelPiilotus5.TabIndex = 31;
             this.labelPiilotus5.Text = "?";
             // 
-            // pictureBox55
+            // pictureBox7
             // 
-            this.pictureBox55.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox55.Image")));
-            this.pictureBox55.Location = new System.Drawing.Point(768, 359);
-            this.pictureBox55.Name = "pictureBox55";
-            this.pictureBox55.Size = new System.Drawing.Size(95, 41);
-            this.pictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox55.TabIndex = 36;
-            this.pictureBox55.TabStop = false;
-            this.pictureBox55.Visible = false;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(771, 353);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(95, 41);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 36;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Visible = false;
             // 
             // labelPiilotus6
             // 
             this.labelPiilotus6.AutoSize = true;
             this.labelPiilotus6.Font = new System.Drawing.Font("Montserrat Black", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPiilotus6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelPiilotus6.Location = new System.Drawing.Point(777, 253);
+            this.labelPiilotus6.Location = new System.Drawing.Point(780, 247);
             this.labelPiilotus6.Name = "labelPiilotus6";
             this.labelPiilotus6.Size = new System.Drawing.Size(80, 92);
             this.labelPiilotus6.TabIndex = 35;
@@ -396,7 +401,7 @@ namespace Football_IQ
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(768, 289);
+            this.pictureBox6.Location = new System.Drawing.Point(771, 283);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(95, 41);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -407,7 +412,7 @@ namespace Football_IQ
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(768, 439);
+            this.pictureBox8.Location = new System.Drawing.Point(771, 433);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(95, 41);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -418,7 +423,7 @@ namespace Football_IQ
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(768, 214);
+            this.pictureBox5.Location = new System.Drawing.Point(771, 208);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(95, 41);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -431,7 +436,7 @@ namespace Football_IQ
             this.labelJuoksu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelJuoksu.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelJuoksu.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.labelJuoksu.Location = new System.Drawing.Point(224, 97);
+            this.labelJuoksu.Location = new System.Drawing.Point(227, 114);
             this.labelJuoksu.Name = "labelJuoksu";
             this.labelJuoksu.Size = new System.Drawing.Size(721, 29);
             this.labelJuoksu.TabIndex = 38;
@@ -443,28 +448,91 @@ namespace Football_IQ
             this.labelHeitto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelHeitto.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelHeitto.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.labelHeitto.Location = new System.Drawing.Point(460, 97);
+            this.labelHeitto.Location = new System.Drawing.Point(432, 114);
             this.labelHeitto.Name = "labelHeitto";
             this.labelHeitto.Size = new System.Drawing.Size(485, 29);
             this.labelHeitto.TabIndex = 39;
             this.labelHeitto.Text = "label1";
             this.labelHeitto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // labelGoal
+            // 
+            this.labelGoal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelGoal.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelGoal.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.labelGoal.Location = new System.Drawing.Point(527, 351);
+            this.labelGoal.Name = "labelGoal";
+            this.labelGoal.Size = new System.Drawing.Size(421, 28);
+            this.labelGoal.TabIndex = 40;
+            this.labelGoal.Text = "Set Your Goals High";
+            this.labelGoal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelGoalSelitys
+            // 
+            this.labelGoalSelitys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelGoalSelitys.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.labelGoalSelitys.Location = new System.Drawing.Point(527, 373);
+            this.labelGoalSelitys.Name = "labelGoalSelitys";
+            this.labelGoalSelitys.Size = new System.Drawing.Size(421, 20);
+            this.labelGoalSelitys.TabIndex = 41;
+            this.labelGoalSelitys.Text = "Answer 8 field goal questions correctly";
+            this.labelGoalSelitys.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelPotku
+            // 
+            this.labelPotku.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPotku.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelPotku.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.labelPotku.Location = new System.Drawing.Point(636, 114);
+            this.labelPotku.Name = "labelPotku";
+            this.labelPotku.Size = new System.Drawing.Size(254, 29);
+            this.labelPotku.TabIndex = 42;
+            this.labelPotku.Text = "label1";
+            this.labelPotku.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelVictory
+            // 
+            this.labelVictory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelVictory.Font = new System.Drawing.Font("Montserrat SemiBold", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelVictory.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.labelVictory.Location = new System.Drawing.Point(527, 199);
+            this.labelVictory.Name = "labelVictory";
+            this.labelVictory.Size = new System.Drawing.Size(421, 28);
+            this.labelVictory.TabIndex = 43;
+            this.labelVictory.Text = "Victory Formation";
+            this.labelVictory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label3.Location = new System.Drawing.Point(527, 222);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(421, 20);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Answer one kneel down questions correctly";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Palkinnot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 626);
+            this.Controls.Add(this.labelPiilotus5);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.labelVictory);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelPotku);
+            this.Controls.Add(this.labelPiilotus7);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.labelGoal);
+            this.Controls.Add(this.labelGoalSelitys);
             this.Controls.Add(this.labelHeitto);
             this.Controls.Add(this.labelJuoksu);
             this.Controls.Add(this.labelPiilotus8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.labelPiilotus5);
-            this.Controls.Add(this.pictureBox55);
             this.Controls.Add(this.labelPiilotus6);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.labelDots);
             this.Controls.Add(this.labelDotsSelitys);
             this.Controls.Add(this.labelGround);
@@ -496,7 +564,7 @@ namespace Football_IQ
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -531,14 +599,19 @@ namespace Football_IQ
         private System.Windows.Forms.Label labelDots;
         private System.Windows.Forms.Label labelDotsSelitys;
         private System.Windows.Forms.Label labelPiilotus8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelPiilotus7;
         private System.Windows.Forms.Label labelPiilotus5;
-        private System.Windows.Forms.PictureBox pictureBox55;
+        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label labelPiilotus6;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label labelJuoksu;
         private System.Windows.Forms.Label labelHeitto;
+        private System.Windows.Forms.Label labelGoal;
+        private System.Windows.Forms.Label labelGoalSelitys;
+        private System.Windows.Forms.Label labelPotku;
+        private System.Windows.Forms.Label labelVictory;
+        private System.Windows.Forms.Label label3;
     }
 }

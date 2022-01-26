@@ -19,6 +19,8 @@ namespace Football_IQ
         int pisteet = 0;
         int juoksuPisteet = 0;
         int heittoPisteet = 0;
+        int potkuPisteet = 0;
+        int polviPisteet = 0;
 
         public Palkinnot()
         {
@@ -31,8 +33,9 @@ namespace Football_IQ
 
             // Näytetään kokonaispisteet 
             labelKokonais.Text = "Totall points: " + registerHandler.PisteHaku(pisteet);
-            labelJuoksu.Text = "Totall rushing attempts: " + registerHandler.JuoksuHaku(juoksuPisteet);
-            labelHeitto.Text = "Total passing attempts: " + registerHandler.HeittoHaku(heittoPisteet);
+            labelJuoksu.Text = "Totall rushing points: " + registerHandler.JuoksuHaku(juoksuPisteet);
+            labelHeitto.Text = "Total passing points: " + registerHandler.HeittoHaku(heittoPisteet);
+            labelPotku.Text = "Total field goal points: " + registerHandler.PotkuHaku(potkuPisteet);            
 
             // Palkintojen rajat joilloin ne tulevat näkyviin
             if (registerHandler.PisteHaku(pisteet) >= 1)
@@ -71,6 +74,18 @@ namespace Football_IQ
                 labelDots.ForeColor = Color.FromArgb(244, 93, 119);
                 pictureBox8.Visible = true;
                 labelPiilotus8.Visible = false;
+            }
+            if(registerHandler.PotkuHaku(heittoPisteet) >= 8)
+            {
+                labelGoal.ForeColor = Color.FromArgb(244, 93, 119);
+                pictureBox7.Visible = true;
+                labelPiilotus7.Visible = false;
+            }
+            if(registerHandler.PolviHaku(polviPisteet) >= 1)
+            {
+                labelVictory.ForeColor = Color.FromArgb(244, 93, 119);
+                pictureBox5.Visible = true;
+                labelPiilotus5.Visible = false;
             }
         }
 

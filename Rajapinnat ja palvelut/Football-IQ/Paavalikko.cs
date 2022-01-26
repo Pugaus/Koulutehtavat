@@ -81,6 +81,7 @@ namespace Football_IQ
                 labelOikeinTaiVaarin.ForeColor = Color.MediumSeaGreen;
                 labelOikeinTaiVaarin.Text = "Right answer";
 
+                // Listätään piste tietystä oikeasta vastauksesta tietokantaan
                 if (labelOikeaVastaus.Text == "Run")
                 {
                     registerHandler.JuoksuPäivitys();
@@ -88,6 +89,14 @@ namespace Football_IQ
                 if (labelOikeaVastaus.Text == "Pass")
                 {
                     registerHandler.HeittoPäivitys();
+                }
+                if(labelOikeaVastaus.Text == "Kick a field goal")
+                {
+                    registerHandler.PotkuPaivitys();
+                }
+                if (labelOikeaVastaus.Text == "Kneel down")
+                {
+                    registerHandler.PolviPaivitys();
                 }
 
             }
