@@ -2,7 +2,11 @@
 
 CREATE TABLE [Palkinnot] (
 Id int IDENTITY NOT NULL,
-Pisteet int NOT NULL);
+Pisteet int NOT NULL,
+Pass int NOT NULL,
+Run int NOT NULL,
+Fieldgoal int NOT NULL,
+Kneel int NOT NULL);
 
 --Kysymykset taulun luonti
 
