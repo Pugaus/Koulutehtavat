@@ -29,6 +29,7 @@ namespace Football_IQ
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paavalikko));
             this.buttonVastaus = new System.Windows.Forms.Button();
             this.comboBoxVastaus = new System.Windows.Forms.ComboBox();
@@ -48,6 +49,8 @@ namespace Football_IQ
             this.openDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBoxPalkinnot = new System.Windows.Forms.PictureBox();
             this.labelPiste = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPalkinnot)).BeginInit();
@@ -61,7 +64,7 @@ namespace Football_IQ
             this.buttonVastaus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVastaus.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonVastaus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(93)))), ((int)(((byte)(119)))));
-            this.buttonVastaus.Location = new System.Drawing.Point(607, 453);
+            this.buttonVastaus.Location = new System.Drawing.Point(607, 485);
             this.buttonVastaus.Name = "buttonVastaus";
             this.buttonVastaus.Size = new System.Drawing.Size(75, 32);
             this.buttonVastaus.TabIndex = 0;
@@ -84,7 +87,7 @@ namespace Football_IQ
             "Pass",
             "Kneel down",
             "Dont know / it depends"});
-            this.comboBoxVastaus.Location = new System.Drawing.Point(408, 454);
+            this.comboBoxVastaus.Location = new System.Drawing.Point(408, 486);
             this.comboBoxVastaus.Name = "comboBoxVastaus";
             this.comboBoxVastaus.Size = new System.Drawing.Size(193, 31);
             this.comboBoxVastaus.TabIndex = 1;
@@ -97,7 +100,7 @@ namespace Football_IQ
             this.buttonKysymys.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKysymys.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonKysymys.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonKysymys.Location = new System.Drawing.Point(276, 453);
+            this.buttonKysymys.Location = new System.Drawing.Point(276, 485);
             this.buttonKysymys.Name = "buttonKysymys";
             this.buttonKysymys.Size = new System.Drawing.Size(126, 32);
             this.buttonKysymys.TabIndex = 2;
@@ -109,7 +112,7 @@ namespace Football_IQ
             // 
             this.labelKysymys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelKysymys.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelKysymys.Location = new System.Drawing.Point(12, 416);
+            this.labelKysymys.Location = new System.Drawing.Point(12, 448);
             this.labelKysymys.Name = "labelKysymys";
             this.labelKysymys.Size = new System.Drawing.Size(933, 15);
             this.labelKysymys.TabIndex = 3;
@@ -121,7 +124,7 @@ namespace Football_IQ
             this.labelOikeaVastaus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelOikeaVastaus.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelOikeaVastaus.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelOikeaVastaus.Location = new System.Drawing.Point(12, 519);
+            this.labelOikeaVastaus.Location = new System.Drawing.Point(12, 551);
             this.labelOikeaVastaus.Name = "labelOikeaVastaus";
             this.labelOikeaVastaus.Size = new System.Drawing.Size(933, 29);
             this.labelOikeaVastaus.TabIndex = 4;
@@ -133,7 +136,7 @@ namespace Football_IQ
             this.labelOikeinTaiVaarin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelOikeinTaiVaarin.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelOikeinTaiVaarin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelOikeinTaiVaarin.Location = new System.Drawing.Point(12, 497);
+            this.labelOikeinTaiVaarin.Location = new System.Drawing.Point(12, 529);
             this.labelOikeinTaiVaarin.Name = "labelOikeinTaiVaarin";
             this.labelOikeinTaiVaarin.Size = new System.Drawing.Size(933, 26);
             this.labelOikeinTaiVaarin.TabIndex = 5;
@@ -249,7 +252,7 @@ namespace Football_IQ
             this.labelPiste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPiste.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPiste.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.labelPiste.Location = new System.Drawing.Point(536, 500);
+            this.labelPiste.Location = new System.Drawing.Point(536, 532);
             this.labelPiste.Name = "labelPiste";
             this.labelPiste.Size = new System.Drawing.Size(430, 20);
             this.labelPiste.TabIndex = 11;
@@ -257,11 +260,30 @@ namespace Football_IQ
             this.labelPiste.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelPiste.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(93)))), ((int)(((byte)(119)))));
+            this.label4.Location = new System.Drawing.Point(12, 376);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(930, 72);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "label4";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Paavalikko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 626);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.labelPiste);
             this.Controls.Add(this.pictureBoxPalkinnot);
             this.Controls.Add(this.pictureBox1);
@@ -308,6 +330,8 @@ namespace Football_IQ
         private System.Windows.Forms.ToolStripMenuItem openDataToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBoxPalkinnot;
         private System.Windows.Forms.Label labelPiste;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

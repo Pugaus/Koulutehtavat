@@ -30,7 +30,6 @@ namespace Football_IQ
 
         private void Palkinnot_Load(object sender, EventArgs e)
         {           
-
             // Näytetään kokonaispisteet 
             labelKokonais.Text = "Totall points: " + registerHandler.PisteHaku(pisteet);
             labelJuoksu.Text = "Totall rushing points: " + registerHandler.JuoksuHaku(juoksuPisteet);

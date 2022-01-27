@@ -16,6 +16,7 @@ namespace Football_IQ
         Pelinlogiikka registerHandler;
         string kysymys = " ";
         string VastausHaku, vastaus;
+        int sekuntia = 0;
 
         public Paavalikko()
         {
@@ -30,12 +31,14 @@ namespace Football_IQ
             labelOikeaVastaus.Hide();
             labelOikeinTaiVaarin.Hide();
             comboBoxVastaus.Enabled = false;
-            buttonVastaus.Enabled = false;
-            
+            buttonVastaus.Enabled = false;            
         }
 
         private void buttonKysymys_Click(object sender, EventArgs e)
         {
+            sekuntia = 10;
+            timer1.Start();
+
             // Näytetään kysymys ja vastausvaihtoehdot
             labelKysymys.Show();
             buttonVastaus.Show();
@@ -54,13 +57,12 @@ namespace Football_IQ
 
             // Haetaan satunnainen kysymys ja käytetään sitä vastauksen haussa
             labelKysymys.Text = registerHandler.Kysymys(kysymys);
-            VastausHaku = labelKysymys.Text;
-            
-            
-
+            VastausHaku = labelKysymys.Text;              
         }
+
         private void buttonVastaus_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             // Lukitaan muut toiminnot paitsi uusi kysymys nappi
             buttonKysymys.Show();
             buttonVastaus.Enabled = false;
@@ -98,16 +100,11 @@ namespace Football_IQ
                 {
                     registerHandler.PolviPaivitys();
                 }
-
             }
             else
             {
                 // Näytetään, että vastaus oli väärin ja kerrotaan oikea vastaus
-                labelOikeaVastaus.Show();
-                labelOikeaVastaus.Text = "The correct answer was: " + labelOikeaVastaus.Text;
-                labelOikeinTaiVaarin.Show();
-                labelOikeinTaiVaarin.ForeColor = Color.FromArgb(244, 93, 119);
-                labelOikeinTaiVaarin.Text = "Wrong answer";
+                oikeanVastauksenNäyttäminen();
             }
         }
        
@@ -138,10 +135,39 @@ namespace Football_IQ
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label4.Show();
+            label4.Text = "Time remaining: " + sekuntia--.ToString();
+            if (sekuntia < 0)
+            {
+                timer1.Stop();
+                buttonKysymys.Show();
+
+                // Kysymyksen oikea vastaus
+                labelOikeaVastaus.Text = registerHandler.Vastaus(VastausHaku);
+
+                label4.Text = "Time's up";
+                buttonVastaus.Enabled = false;
+                comboBoxVastaus.Enabled = false;
+
+                // oikean vastauksen näyttäminen jos aika loppuu
+                oikeanVastauksenNäyttäminen();
+            }
+        }
+
         private void openDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ohjelman data on kerätty Data World sivustolta. " +
                 "Osoite: https://data.world/crowdflower/football-strategy", "Avoin data", MessageBoxButtons.OK);
+        }
+        private void oikeanVastauksenNäyttäminen()
+        {
+            labelOikeaVastaus.Show();
+            labelOikeaVastaus.Text = "The correct answer was: " + labelOikeaVastaus.Text;
+            labelOikeinTaiVaarin.Show();
+            labelOikeinTaiVaarin.ForeColor = Color.FromArgb(244, 93, 119);
+            labelOikeinTaiVaarin.Text = "Wrong answer";
         }
     }
 }

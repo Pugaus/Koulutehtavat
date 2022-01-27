@@ -207,6 +207,7 @@ namespace Football_IQ
             }
             return heittoPisteet;
         }
+
         public void heittopistePaivitys()
         {
             string pisteSql = "UPDATE Palkinnot SET Pass = Pass + 1";
@@ -228,6 +229,7 @@ namespace Football_IQ
                     }
             }
         }
+
         public int potkupisteidenHakuDatabase(int potkuPisteet)
         {
             string pisteetSql = "SELECT Fieldgoal FROM Palkinnot";
@@ -258,6 +260,7 @@ namespace Football_IQ
             }
             return potkuPisteet;
         }
+
         public void potkupistePaivitys()
         {
             string pisteSql = "UPDATE Palkinnot SET Fieldgoal = Fieldgoal + 1";
@@ -279,6 +282,7 @@ namespace Football_IQ
                     }
             }
         }
+
         public int polvipisteidenHakuDatabase(int polviPisteet)
         {
             string pisteetSql = "SELECT Kneel FROM Palkinnot";
@@ -309,6 +313,7 @@ namespace Football_IQ
             }
             return polviPisteet;
         }
+
         public void polvipistePaivitys()
         {
             string pisteSql = "UPDATE Palkinnot SET Kneel = Kneel + 1";
